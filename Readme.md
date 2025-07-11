@@ -15,9 +15,19 @@ This project is a multi-agent travel planner that uses the MCP (Multi-Context Pl
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/aatifahmad123/mercer-mettl-hackathon.git
+   cd mercer-mettl-hackathon
     ```
+2. Create a virtual environment (optional but recommended):
+   ```bash
+   python -m venv myenv
+   source venv/bin/activate  
+   ```
+   or on Windows:
+   ```bash
+   myenv\Scripts\activate
+   ```
+   
 2. Install the required packages:
    ```bash
    pip install -r requirements.txt
