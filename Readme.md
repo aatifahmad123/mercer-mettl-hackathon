@@ -21,18 +21,23 @@ This project is a multi-agent travel planner that uses the MCP (Multi-Context Pl
 2. Create a virtual environment (optional but recommended):
    ```bash
    python -m venv myenv
-   source venv/bin/activate  
+   source myenv/bin/activate  
    ```
    or on Windows:
    ```bash
    myenv\Scripts\activate
    ```
-   
+
 2. Install the required packages:
    ```bash
    pip install -r requirements.txt
    ```
-3. Set up the environment variables for API keys and other configurations as needed.
+   
+3. Set up the environment variables for API keys. Make sure you have a Google API Key and set it in a .env file. A sample `.env` file might look like this:
+   ```
+   GOOGLE_API_KEY=your_google_api_key_here
+   ```
+
 4. Run the application:
    ```bash
    python app.py
