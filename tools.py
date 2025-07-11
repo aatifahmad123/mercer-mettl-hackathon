@@ -19,20 +19,20 @@ save_tool = Tool(
     description="Saves the travel itinerary to a text file.",
 )
 
-# Flight search tool (using DuckDuckGo)
+# Flight search tool (budget-aware, INR)
 flight_search = DuckDuckGoSearchRun()
 flight_search_tool = Tool(
     name="flight_search",
-    func=lambda x: flight_search.run(f"flights to {x}"),
-    description="Search for flights to a destination.",
+    func=lambda x: flight_search.run(f"flights from {x['user_location']} to {x['destination']} under ₹{int(x['budget']//2)}"),
+    description="Search for flights from user location to destination within budget (INR).",
 )
 
-# Hotel search tool (using DuckDuckGo)
+# Hotel search tool (budget-aware, INR)
 hotel_search = DuckDuckGoSearchRun()
 hotel_search_tool = Tool(
     name="hotel_search",
-    func=lambda x: hotel_search.run(f"hotels in {x}"),
-    description="Search for hotels in a destination.",
+    func=lambda x: hotel_search.run(f"hotels in {x['destination']} under ₹{int((x['budget']//2)/3)} per night"),
+    description="Search for hotels in destination within budget (INR).",
 )
 
 # Wikipedia tool for attractions
